@@ -10,7 +10,7 @@ from utils import currency_rates
 from sys import argv
 
 if len(argv) == 2:
-    currency_rates(argv[1].upper())
+    print(*currency_rates(argv[1].upper()))
 elif len(argv) == 1:
     print('You dont print anything')
 else:

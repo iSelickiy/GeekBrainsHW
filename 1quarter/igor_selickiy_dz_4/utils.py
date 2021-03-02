@@ -10,9 +10,9 @@ def currency_rates(valute, site=response):
         if valute in elem:
             course = Decimal(elem[elem.find('<Value>'):elem.find('</Value>')].split('>')[1].replace(",", "."))
             res = course.quantize(Decimal('1.00'))
-    if res:
-        date = site[site.find('Date="'):site.find('" name="Foreign Currency Market"')].split('"')[1].split('.')
-        date = datetime.date(int(date[2]),int(date[1]),int(date[0]))
-        print(res, date)
+            date = site[site.find('Date="'):site.find('" name="Foreign Currency Market"')].split('"')[1].split('.')
+            date = datetime.date(int(date[2]),int(date[1]),int(date[0]))
+            # print(res, date)
+            return(res, date)
     else:
         print(res)

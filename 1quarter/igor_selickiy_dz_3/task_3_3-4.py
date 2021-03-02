@@ -21,11 +21,13 @@ def thesaurus_adv(full_names):
         split_name = elem.split(' ')
         name = split_name[0]
         surname = split_name[1]
-        if not full_name_dict.get(surname[0]):
-            full_name_dict[surname[0]] = {}
-        if not full_name_dict[surname[0]].get(name[0]):
-            full_name_dict[surname[0]][name[0]] = []
-        full_name_dict[surname[0]][name[0]].append(elem)
+        name_let = name[0]
+        surname_let = surname[0]
+        if not full_name_dict.get(surname_let):
+            full_name_dict[surname_let] = {}
+        if not full_name_dict[surname_let].get(name_let):
+            full_name_dict[surname_let][name_let] = []
+        full_name_dict[surname_let][name_let].append(elem)
     sort_dict = {}
     for surn_letter in sorted(full_name_dict.keys()):
         sort_dict[surn_letter] = {}
